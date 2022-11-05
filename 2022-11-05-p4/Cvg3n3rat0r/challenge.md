@@ -13,12 +13,14 @@ Now with W3schools support!
 http://cvgenerator.zajebistyc.tf
 
 I knew the atack that was needed was xss but i needed to find out how to exploit the system. The first few lines were <p> paragraph tags with <b> bold inside of them. I used my previous knowledge to inject <script> tags. I realized that document.location.href was needed so i added that. I was then given the /tmp directory it was located in.
-  
-<script>document.write(document.location.href)</script>
 
+```
+<script>document.write(document.location.href)</script>
+```
+  
   I found a medium article by r3d-buck3t to exfil xss
   
-  https://medium.com/r3d-buck3t/xss-to-exfiltrate-data-from-pdfs-f5bbb35eaba7
+Medium(https://medium.com/r3d-buck3t/xss-to-exfiltrate-data-from-pdfs-f5bbb35eaba7)
   
   after slowly looking around the page i noticed one i thought would work.
   
