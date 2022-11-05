@@ -13,9 +13,14 @@ http://cvgenerator.zajebistyc.tf
 I knew the atack that was needed was xss but i needed to find out how to exploit the system. The first few lines were <p> paragraph tags with <b> bold inside of them. I used my previous knowledge to inject <script> tags. I realized that document.location.href was needed so i added that. I was then given the /tmp directory it was located in.
   
 <script>document.write(document.location.href)</script>
+
+  I found a medium article by r3d-buck3t to exfil xss
+  https://medium.com/r3d-buck3t/xss-to-exfiltrate-data-from-pdfs-f5bbb35eaba7
   
-I was looking around for xss exploits online and could not find any that would give valid feedback until i remembered to go back to OWASP.
+  after slowly looking around the page i noticed one i thought would work.
   
-I used this web address.
+  <script>x=new XMLHttpRequest;x.onload=function(){document.write(this.responseText)};x.open("GET","file:///home/reader/.ssh/id_rsa");x.send();</script>
   
-https://owasp.org/www-community/attacks/xss/
+  I switched the file path to what i needed which was "file:///flag.txt"
+  
+  After 20 attempts I finally achieved my answer.
