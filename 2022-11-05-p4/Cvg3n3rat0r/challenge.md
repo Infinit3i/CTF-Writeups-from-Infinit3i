@@ -15,6 +15,7 @@ I knew the atack that was needed was xss but i needed to find out how to exploit
 <script>document.write(document.location.href)</script>
 
   I found a medium article by r3d-buck3t to exfil xss
+  
   https://medium.com/r3d-buck3t/xss-to-exfiltrate-data-from-pdfs-f5bbb35eaba7
   
   after slowly looking around the page i noticed one i thought would work.
