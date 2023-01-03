@@ -2,7 +2,7 @@
 
 Starting off I nmaped the box with
 `nmap -sVC 192.168.56.104`
-![flag Announcement Image]([https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/main/.png](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/main/Vulnhub/VulnOSv2/VulnOSv2%20Images/image1.png))
+![flag Announcement Image]([Vulnhub/VulnOSv2/VulnOSv2 Images/1.png])
 
 After that, I looked around at the website
 
