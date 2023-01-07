@@ -3,50 +3,53 @@
 ## fun rating 5/10
 ## difficulty 2/10
 
-Starting off I nmaped the box with
+Nmap box with 
+`nmap -sVC 192.168.56.118`
 
-```nmap -sVC 192.168.56.118```
+Once I saw FTP I tried to log on with anonymous/anonymous
 
-![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/26b30ae59f711928ee3a0bf4900abaf3ac5e4fb9/Vulnhub/VulnOSv2/VulnOSv2%20Images/1.png)
+![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/4d1c945e9c31f448b8a22b18bd94624acbf0003b/Vulnhub/Jangow01/Jangow01%20Images/1.png)
 
-After that, I looked around at the website and used gobuster to find any other links. I could not find anything.
+We then visit the website on port 80
 
-![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/26b30ae59f711928ee3a0bf4900abaf3ac5e4fb9/Vulnhub/VulnOSv2/VulnOSv2%20Images/2.png)
+![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/4d1c945e9c31f448b8a22b18bd94624acbf0003b/Vulnhub/Jangow01/Jangow01%20Images/2.png)
 
-After that, I clicked on the link. Looking around I could not find anything that was of value so i checked searchsploit for drupal since I saw that as the icon.
+Once on the website we see some tabs on the top, visit buscar and see = at the end of the uri. we try to input some information into it.
 
-![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/26b30ae59f711928ee3a0bf4900abaf3ac5e4fb9/Vulnhub/VulnOSv2/VulnOSv2%20Images/3.png)
+![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/4d1c945e9c31f448b8a22b18bd94624acbf0003b/Vulnhub/Jangow01/Jangow01%20Images/3.png)
 
-Looking around i noticed drupalgeddon2 which has worked for me in the past.
+It works when we use id!
 
-![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/26b30ae59f711928ee3a0bf4900abaf3ac5e4fb9/Vulnhub/VulnOSv2/VulnOSv2%20Images/4.png)
+![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/4d1c945e9c31f448b8a22b18bd94624acbf0003b/Vulnhub/Jangow01/Jangow01%20Images/4.png)
 
-after install highline i ran drupalgeddon2 and got in as www-data
+We look around the system and we can view /home/jangow01/user.txt
 
-![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/26b30ae59f711928ee3a0bf4900abaf3ac5e4fb9/Vulnhub/VulnOSv2/VulnOSv2%20Images/5.png)
+![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/4d1c945e9c31f448b8a22b18bd94624acbf0003b/Vulnhub/Jangow01/Jangow01%20Images/5.png)
 
-I checked what version of ubuntu we were on and it is ANCIENT!!
+Looking around for a config or backup file, we use ls -alt and find hidden files in our orginal folder
 
-![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/26b30ae59f711928ee3a0bf4900abaf3ac5e4fb9/Vulnhub/VulnOSv2/VulnOSv2%20Images/7.png)
+![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/4d1c945e9c31f448b8a22b18bd94624acbf0003b/Vulnhub/Jangow01/Jangow01%20Images/6.png)
 
-so fun time "DiRtY cOw"
+We then log into ftp with the jangow01/abygurl69
 
-![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/26b30ae59f711928ee3a0bf4900abaf3ac5e4fb9/Vulnhub/VulnOSv2/VulnOSv2%20Images/8.png)
+![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/4d1c945e9c31f448b8a22b18bd94624acbf0003b/Vulnhub/Jangow01/Jangow01%20Images/7.png)
 
+Once on the box we find a directory where we can upload files. We found out we can upload them to /home/jangow01
 
+![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/4d1c945e9c31f448b8a22b18bd94624acbf0003b/Vulnhub/Jangow01/Jangow01%20Images/8.png)
 
-Once I couldn't get to /tmp i decided to use metasploit
+Looking at the version of ubuntu we see it is older just like the [VulnOSv2](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/2d018642452f5c5e4e615b08f2b010d5dfafbb1f/Vulnhub/VulnOSv2/README.md) box. We use this [exploit](https://www.exploit-db.com/exploits/45010).
 
-![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/26b30ae59f711928ee3a0bf4900abaf3ac5e4fb9/Vulnhub/VulnOSv2/VulnOSv2%20Images/9.png)
+![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/4d1c945e9c31f448b8a22b18bd94624acbf0003b/Vulnhub/Jangow01/Jangow01%20Images/9.png)
 
-grabbed my exploit.cpp and found out it worked the first time but would not let me go into the /tmp folder.
+We log on to the actual virtualbox of jangow01 now that we know the login and password
 
-![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/26b30ae59f711928ee3a0bf4900abaf3ac5e4fb9/Vulnhub/VulnOSv2/VulnOSv2%20Images/10.png)
+we login with jangow01/abygurl69
 
-ran final g++ in the dirty cow file.
+![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/4d1c945e9c31f448b8a22b18bd94624acbf0003b/Vulnhub/Jangow01/Jangow01%20Images/10.png)
 
-![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/26b30ae59f711928ee3a0bf4900abaf3ac5e4fb9/Vulnhub/VulnOSv2/VulnOSv2%20Images/11.png)
+gcc file and run. Once the file is run it will give a root shell where you can maneuver to /root
 
-`g++ -Wall -pedantic -O2 -std=c++11 -pthread -o dcow exploit.cpp -lutil`
+![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/4d1c945e9c31f448b8a22b18bd94624acbf0003b/Vulnhub/Jangow01/Jangow01%20Images/11.png)
 
-![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/26b30ae59f711928ee3a0bf4900abaf3ac5e4fb9/Vulnhub/VulnOSv2/VulnOSv2%20Images/12.png)
+We finished another vulnhub box!
