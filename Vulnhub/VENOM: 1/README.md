@@ -3,7 +3,7 @@
 ## fun rating 8/10
 ## difficulty 4/10
 
-TLDR: nmap > HTTP source code > decrypt md5 > vigenere cipher > 
+TLDR: `nmap > HTTP source code > decrypt md5 > ftp grab > decode vigenere cipher > host virtualization > subrion exploit on /panel > reverse .phar in uploads > find hidden file > sudo to root`
 
 Nmap box with 
 ```nmap -sVC 192.168.56.103```
@@ -97,3 +97,4 @@ Once root go into /root and open `cat /root/root.txt`
 ![flag Announcement Image](https://github.com/Infinit3i/CTF-Writeups-from-Infinit3i/blob/3c07c55f0a80e3161900aac2c021008082c394ed/Vulnhub/VENOM:%201/VENOM:%201%20Images/15.png)
 
 Thanks for reading!
+Check out my [website](https://www.matthewiver.com)
