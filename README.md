@@ -7,3 +7,4 @@
 * [VulnOSv2](Vulnhub/VulnOSv2)
 * [Jangow01](Vulnhub/Jangow01)
 * [VENOM1](Vulnhub/VENOM1)
+* [EvilBox1](Vulnhub/EvilBox1)
